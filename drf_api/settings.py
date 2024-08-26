@@ -138,3 +138,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
+    # add other trusted origins as needed
+]
