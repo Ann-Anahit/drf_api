@@ -2,7 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-print('DATABASE_URL:', os.environ.get('DATABASE_URL'))
+import secrets
+print(secrets.token_hex(24))
 
 
 def main():

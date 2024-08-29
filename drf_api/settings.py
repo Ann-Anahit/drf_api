@@ -61,11 +61,14 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     'localhost',
+    'https://drf-api-pp-0ae57f00f3cd.herokuapp.com',
+    '127.0.0.1',
+    '8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
@@ -111,6 +114,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -118,9 +122,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
-
 ROOT_URLCONF = 'drf_api.urls'
 
 TEMPLATES = [
@@ -204,6 +206,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
+    'https://drf-api-pp-0ae57f00f3cd.herokuapp.com',
   
 ]
 REST_FRAMEWORK = {
