@@ -66,7 +66,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     'localhost',
-    'https://drf-api-pp-0ae57f00f3cd.herokuapp.com',
+    'drf-api-pp-0ae57f00f3cd.herokuapp.com',
     '127.0.0.1',
     '8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
 ]
