@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'followers',
 ]
 
-
+SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -167,4 +167,4 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
-SITE_ID = 1
+
