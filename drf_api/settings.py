@@ -207,13 +207,4 @@ CSRF_TRUSTED_ORIGINS = [
     'https://drf-api-pp-0ae57f00f3cd.herokuapp.com',
   
 ]
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-}
 
