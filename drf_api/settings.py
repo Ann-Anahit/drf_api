@@ -53,7 +53,7 @@ JWT_AUTH_SAMESITE = 'None'
 
 
 REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'drf-api-pp.serializers.CurrentUserSerializer'
+    'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer'
 }
 
 # Quick-start development settings - unsuitable for production
@@ -144,7 +144,7 @@ CORS_ALLOWED_METHODS = [
     'DELETE',
 ] 
 
-ROOT_URLCONF = 'drf-api-pp.urls'
+ROOT_URLCONF = 'drf_api_pp.urls'
 
 TEMPLATES = [
     {
@@ -162,7 +162,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'drf-api-pp.wsgi.application'
+WSGI_APPLICATION = 'drf_api.wsgi.application'
 
 
 # Database
