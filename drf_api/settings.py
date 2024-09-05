@@ -122,7 +122,7 @@ if 'CLIENT_ORIGIN' in os.environ:
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",
                                     r"^https://.*\.herokuapp\.com$",
-                                    "https://8000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net",
+                                    "https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net",
 
     ]
 
