@@ -69,6 +69,8 @@ ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     'localhost',
     '8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
+    'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
+
 ]
 
 # Application definition
