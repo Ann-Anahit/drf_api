@@ -134,8 +134,15 @@ CORS_ALLOW_HEADERS = [
     'authorization',
     'content-type',
     'x-csrftoken',
-   
 ]
+
+
+CORS_ALLOWED_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+] 
 
 ROOT_URLCONF = 'drf-api-pp.urls'
 
