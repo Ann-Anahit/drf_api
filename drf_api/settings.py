@@ -144,6 +144,9 @@ CORS_ALLOWED_METHODS = [
     'PUT',
     'DELETE',
 ] 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
+]
 
 ROOT_URLCONF = 'drf_api.urls'
 

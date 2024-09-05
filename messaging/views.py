@@ -1,4 +1,5 @@
 from rest_framework import generics, permissions
+from django.db.models import Q
 from .models import Message
 from .serializers import MessageSerializer
 
@@ -11,8 +12,8 @@ class MessageListView(generics.ListAPIView):
         # Get messages exchanged between the authenticated user and another user
         other_user_id = self.kwargs['user_id']
         return Message.objects.filter(
-            (models.Q(sender=self.request.user) & models.Q(receiver__id=other_user_id)) |
-            (models.Q(sender__id=other_user_id) & models.Q(receiver=self.request.user))
+            (Q(sender=self.request.user) & Q(receiver__id=other_user_id)) |
+            (Q(sender__id=other_user_id) & Q(receiver=self.request.user))
         ).order_by('timestamp')
 
 # Send a new message
