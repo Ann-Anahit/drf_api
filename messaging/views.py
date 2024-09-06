@@ -1,36 +1,25 @@
 from rest_framework import generics, permissions
-from django.db.models import Q
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Message
 from .serializers import MessageSerializer
+from drf_api.permissions import IsOwnerOrReadOnly
 
-# List all messages between a user and another user
-class MessageListView(generics.ListAPIView):
+class MessageListCreate(generics.ListCreateAPIView):
+    """
+    List messages or create a new message if logged in.
+    """
     serializer_class = MessageSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        # Get messages exchanged between the authenticated user and another user
-        other_user_id = self.kwargs['user_id']
-        return Message.objects.filter(
-            (Q(sender=self.request.user) & Q(receiver__id=other_user_id)) |
-            (Q(sender__id=other_user_id) & Q(receiver=self.request.user))
-        ).order_by('timestamp')
-
-# Send a new message
-class MessageCreateView(generics.CreateAPIView):
-    serializer_class = MessageSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    queryset = Message.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['receiver']
 
     def perform_create(self, serializer):
         serializer.save(sender=self.request.user)
 
-class MarkAsReadView(generics.UpdateAPIView):
+class MessageDetail(generics.RetrieveAPIView):
+    """
+    Retrieve a message by its id.
+    """
     serializer_class = MessageSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_object(self):
-        message = Message.objects.get(id=self.kwargs['pk'], receiver=self.request.user)
-        return message
-
-    def perform_update(self, serializer):
-        serializer.save(is_read=True)
+    queryset = Message.objects.all()
