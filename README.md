@@ -39,13 +39,14 @@ Due to time constraints, much of the project's workflow was adapted from the DRF
 
 ## Developer User Stories
 
-You can find the User Stories here: [GitHub Project]().
+You can find the User Stories here: [GitHub Project](https://github.com/users/Ann-Anahit/projects/5/views/1).
 
 # Database Design
 
 ## Models
 
-The relationships among these models are summarized in the following entity-relationship diagram.
+The relationships between these models are illustrated in the entity-relationship diagram below.
+
 
 ![erd](documentation/images/erd.png)
 
@@ -121,7 +122,7 @@ Please click [here](TESTING.md) to go to the testing document.
 
 ## Languages
 
-* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the DRF backend framework.
+* [Python] - Provides the functionality for the DRF backend framework.
 
 [Back to top](<#content>)
 
