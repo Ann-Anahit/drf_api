@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User  # Import the User model
 from django.contrib.humanize.templatetags.humanize import naturaltime  # Import naturaltime
 from .models import Message
 
@@ -7,7 +8,7 @@ class MessageSerializer(serializers.ModelSerializer):
     Serializer for the Message model
     """
     sender = serializers.ReadOnlyField(source='sender.username')
-    receiver = serializers.ReadOnlyField(source='receiver.username')
+    receiver = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field='username')
     is_sender = serializers.SerializerMethodField()
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()

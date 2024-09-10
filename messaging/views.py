@@ -10,14 +10,19 @@ class MessageListCreate(generics.ListCreateAPIView):
     serializer_class = MessageSerializer
     permission_classes = [permissions.IsAuthenticated]
     queryset = Message.objects.all()
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['receiver']
+
+    def perform_create(self, serializer):
+        # Ensure the sender is set to the currently authenticated user
+        serializer.save(sender=self.request.user)
 
     def get_queryset(self):
-        user_id = self.request.query_params.get('user')
+        # Filter messages where the authenticated user is the sender or receiver
+        user = self.request.user
+        user_id = self.request.query_params.get('user')  # Optional filter for specific receiver
         if user_id:
-            return self.queryset.filter(receiver_id=user_id)
-        return self.queryset
+            return self.queryset.filter(receiver_id=user_id, sender=user)
+        # If no 'user' parameter, return all messages where the authenticated user is the sender or receiver
+        return self.queryset.filter(sender=user) | self.queryset.filter(receiver=user)
 
 class MessageDetail(generics.RetrieveAPIView):
     """
