@@ -48,7 +48,7 @@ You can find the User Stories here: [GitHub Project](https://github.com/users/An
 The relationships between these models are illustrated in the entity-relationship diagram below.
 
 
-![erd](documantation/images/ERD.png)
+![erd](documentation/images/ERD.png)
 
 [Back to top](<#content>)
 
@@ -60,13 +60,13 @@ The backend of the project consists of a page for profiles, events, followers, a
 
 When entering the API for the first time, the user is greeted by a simple welcome message.
 
-![welcome](documantation/images/API.png)
+![welcome](documentation/images/API.png)
 
 [Back to top](<#content>)
 
 ## Profiles
 
-On the profiles page you can see a list of profiles and each profile contains the owner, created_at, updated_at, name, bio and image fields. The is_owner, following_id, events_count, followers_count, following_count and attendance_count fields have also been added to the serializer.
+On the profiles page you can see a list of profiles and each profile contains the owner, created_at, updated_at, name, bio and image fields. The is_owner, following_id, events_count, followers_count, following_count and messages fields have also been added to the serializer.
 
 ![profiles](documentation/images/profiles.png)
 
@@ -74,9 +74,9 @@ On the profiles page you can see a list of profiles and each profile contains th
 
 ## Events
 
-On the events page, you can see a list of events with the fields owner, created_at, updated_at, title, description, event_image and event_date. The serializer added the fields is_owner, profile_id, profile_image, favorite_id, attendance_id, attendance_count and comments_count.
+On the events page, you can see a list of events with the fields owner, created_at, updated_at, title, description, event_image and event_date. The serializer added the fields is_owner, profile_id, profile_image, favorite_id and comments_count.
 
-![events](documentation/images/events.png)
+![events](documentation/images/posts.png)
 
 [Back to top](<#content>)
 
