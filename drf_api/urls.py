@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from .views import root_route, logout_route
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('', root_route),
@@ -15,6 +16,7 @@ urlpatterns = [
     path('', include('likes.urls')),
     path('', include('followers.urls')),
     path('messages/', include('messaging.urls')),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 ]
 
 
