@@ -1,6 +1,6 @@
 # MeetandMingle. API
 
-This is the testing document for the backend of my connectify. project. If you want to see the README, click [here](README.md).
+This is the testing document for the backend of my MeetandMingle project. If you want to see the README, click [here](README.md).
 
 # Testing
 
