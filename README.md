@@ -48,7 +48,7 @@ You can find the User Stories here: [GitHub Project](https://github.com/users/An
 The relationships between these models are illustrated in the entity-relationship diagram below.
 
 
-![erd](documantation/images/ERD-Project5 .png)
+![erd](documantation/images/ERD.png)
 
 [Back to top](<#content>)
 
@@ -60,7 +60,7 @@ The backend of the project consists of a page for profiles, events, followers, a
 
 When entering the API for the first time, the user is greeted by a simple welcome message.
 
-![welcome](documentation/images/welcome.png)
+![welcome](documantation/images/API.png)
 
 [Back to top](<#content>)
 
