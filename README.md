@@ -72,9 +72,9 @@ On the profiles page you can see a list of profiles and each profile contains th
 
 [Back to top](<#content>)
 
-## Events
+## Posts
 
-On the events page, you can see a list of events with the fields owner, created_at, updated_at, title, description, event_image and event_date. The serializer added the fields is_owner, profile_id, profile_image, favorite_id and comments_count.
+On the Posts/events page, you can see a list of events and posts with the fields owner, created_at, updated_at, title, description, image, content and updated_at. The serializer added the fields is_owner, profile_id, profile_image, favorite_id and comments_count.
 
 ![events](documentation/images/posts.png)
 
@@ -82,33 +82,33 @@ On the events page, you can see a list of events with the fields owner, created_
 
 ## Followers
 
-The followers template only contains three fields: owner, followed and created_at and through the serializer I've only added an extra followed_name field.
+The followers template contains five fields: id, owner, created_at, followed and followed_name field.
 
-![followers](documentation/images/followers.png)
+![followers](documentation/images/follower.png)
 
 [Back to top](<#content>)
 
-## Attendances
+## Messages
 
-In attendances we have the owner, event, event_title and created_at fields.
+In messages we have the id, sender, receiver, created_at, updated_at, contentx fields.
 
-![attendances](documentation/images/attendances.png)
+![messages](documentation/images/messages.png)
 
 [Back to top](<#content>)
 
 ## Comments
 
-The comments model is quite simple and contains the owner, event, created_at, updated_at and content fields. Through the serializer I've added the is_owner, profile_id, profile_image and event_title fields.
+The comments model is quite simple and contains the id, owner, created_at, updated_at and content fields. Through the serializer I've added the is_owner, profile_id, profile_image and post fields.
 
 ![comments](documentation/images/comments.png)
 
 [Back to top](<#content>)
 
-## Favorites
+## Likes
 
-And lastly we have favorites, which contain the owner, event, created_at and event_title fields. 
+And lastly we have likes, which contain the owner, post and created_at fields. 
 
-![favorites](documentation/images/favorites.png)
+![favorites](documentation/images/likes.png)
 
 [Back to top](<#content>)
 
