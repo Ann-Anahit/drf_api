@@ -64,12 +64,13 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = True #'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOST'),
+    os.environ.get('ALLOWED_HOST', ''),
+    '127.0.0.1',
     'localhost',
-    '8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
+    '.codeinstitute-ide.net',
     '3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
     'drf-api-pp-0ae57f00f3cd.herokuapp.com'
 
@@ -108,7 +109,6 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -116,7 +116,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
