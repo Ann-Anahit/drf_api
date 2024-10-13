@@ -89,6 +89,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt.token_blacklist',
     'dj_rest_auth',
     'allauth',
     'allauth.account',
