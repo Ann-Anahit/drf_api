@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User  # Import the User model
-from django.contrib.humanize.templatetags.humanize import naturaltime  # Import naturaltime
+from django.contrib.auth.models import User
+from django.contrib.humanize.templatetags.humanize import naturaltime
 from .models import Message
 
 class MessageSerializer(serializers.ModelSerializer):
@@ -26,3 +26,8 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = ['id', 'sender', 'receiver', 'created_at', 'updated_at', 'content', 'is_sender']
+
+    def validate_content(self, value):
+        if not value.strip():
+            raise serializers.ValidationError("Content cannot be empty.")
+        return value
