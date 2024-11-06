@@ -1,4 +1,3 @@
-# models.py
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -12,10 +11,13 @@ class Conversation(models.Model):
         return f"Conversation between {', '.join(participant.username for participant in self.participants.all())}"
 
 class Message(models.Model):
-    conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE)
-    sender = models.ForeignKey(User, on_delete=models.CASCADE)
+    sender = models.ForeignKey(User, related_name='sent_messages', on_delete=models.CASCADE)
+    receiver = models.ForeignKey(User, related_name='received_messages', on_delete=models.CASCADE)
     content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.sender.username} at {self.created_at}"
+        return f"Message from {self.sender.username} to {self.receiver.username} at {self.timestamp}"
+
+    class Meta:
+        ordering = ['timestamp']
