@@ -124,6 +124,7 @@ if 'CLIENT_ORIGIN' in os.environ:
    CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN'),
     'https://meetandmingle-01eaa763465e.herokuapp.com',
+    'https://8000-annanahit-drfapi-8hp2g0b8pys.ws.codeinstitute-ide.net',
     'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
 ]
 
@@ -150,10 +151,11 @@ CORS_ALLOWED_METHODS = [
     'DELETE',
 ] 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-annanahit-drfapi-niz9191cenx.ws.codeinstitute-ide.net',
+    'https://8000-annanahit-drfapi-8hp2g0b8pys.ws.codeinstitute-ide.net',
     'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
-
+    'https://meetandmingle-01eaa763465e.herokuapp.com',
 ]
+
 
 ROOT_URLCONF = 'drf_api.urls'
 
