@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Profile model to represent user information (e.g., avatar, bio)
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messaging_profile')  # Add related_name
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     bio = models.TextField(blank=True)
 
