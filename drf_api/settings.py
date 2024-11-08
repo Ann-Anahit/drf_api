@@ -47,7 +47,7 @@ if 'DEV' not in os.environ:
     ]
 
 REST_USE_JWT = True
-JWT_AUTH_SECURE = True
+JWT_AUTH_SECURE = False
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
@@ -112,6 +112,7 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,7 +133,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",
                                     r"^https://.*\.herokuapp\.com$",
                                     "https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net",
-
+                                    "http://localhost:3000", 
     ]
 
 CORS_ALLOW_CREDENTIALS = True

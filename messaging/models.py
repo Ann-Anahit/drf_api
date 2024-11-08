@@ -1,23 +1,24 @@
-from django.contrib.auth import get_user_model
 from django.db import models
+from django.contrib.auth.models import User
 
-User = get_user_model()
-
-class Conversation(models.Model):
-    participants = models.ManyToManyField(User)
-    created_at = models.DateTimeField(auto_now_add=True)
+# Profile model to represent user information (e.g., avatar, bio)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+    bio = models.TextField(blank=True)
 
     def __str__(self):
-        return f"Conversation between {', '.join(participant.username for participant in self.participants.all())}"
+        return self.user.username
 
+# Message model to store conversation messages
 class Message(models.Model):
-    sender = models.ForeignKey(User, related_name='sent_messages', on_delete=models.CASCADE)
-    receiver = models.ForeignKey(User, related_name='received_messages', on_delete=models.CASCADE)
-    content = models.TextField()
+    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
+    recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_messages')
+    text = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.sender.username} to {self.receiver.username} at {self.timestamp}"
-
+        return f"Message from {self.sender.username} to {self.recipient.username}"
+    
     class Meta:
         ordering = ['timestamp']
