@@ -1,17 +1,16 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from profiles.models import Profile 
 from .models import Message
-
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = ['id', 'user', 'avatar', 'bio']
 
 class MessageSerializer(serializers.ModelSerializer):
     sender = serializers.StringRelatedField()
     recipient = serializers.StringRelatedField()
 
+    
+    created_at = serializers.DateTimeField(source='timestamp', format='%Y-%m-%dT%H:%M:%SZ')
+
+
     class Meta:
         model = Message
-        fields = ['id', 'sender', 'recipient', 'text', 'timestamp']
+        fields = ['id', 'sender', 'recipient', 'content', 'created_at']
+
