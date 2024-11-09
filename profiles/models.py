@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
@@ -8,9 +8,9 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
-    bio = models.TextField(blank=True, null=True)
+    content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_profile_wnybpa'
+        upload_to='images/', default='../default_profile_qdjgyp'
     )
 
     class Meta:
