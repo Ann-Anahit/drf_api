@@ -24,8 +24,10 @@ urlpatterns = [
     path('comments/', include('comments.urls')),  # Comments app
     path('likes/', include('likes.urls')),  # Likes app
     path('followers/', include('followers.urls')),  # Followers app
-
+    path('groups/', include('groups.urls')),  # Groups app
 ]
+
+
 
 
 
