@@ -1,9 +1,13 @@
-# urls.py in your Django app
-from django.urls import path
-from .views import GroupListCreate, GroupDetail
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import GroupListCreate, GroupDetail, JoinGroup, LeaveGroup, GroupViewSet
+
+router = DefaultRouter()
+router.register(r'groups', GroupViewSet, basename='group')
 
 urlpatterns = [
-    # Ensure the path is correct and matches your API structure
-    path('api/groups/', GroupListCreate.as_view(), name='group-list-create'),  # Handles GET and POST
-    path('api/groups/<int:pk>/', GroupDetail.as_view(), name='group-detail'),  # Handles GET for a single group
+    path('', include(router.urls)),
+    path('join/<int:group_id>/', JoinGroup.as_view(), name='join-group'),
+    path('leave/<int:group_id>/', LeaveGroup.as_view(), name='leave-group'),
+    path('<int:group_id>/', GroupDetail.as_view(), name='group-detail'),
 ]
