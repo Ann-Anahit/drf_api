@@ -25,8 +25,6 @@ urlpatterns = [
     path('likes/', include('likes.urls')),  # Likes app
     path('followers/', include('followers.urls')),  # Followers app
 
-    # Messaging app API URLs
-    path('api/messages/', include('messaging.urls')),  # Messaging API
 ]
 
 
