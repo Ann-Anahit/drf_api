@@ -1,13 +1,9 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import GroupListCreate, GroupDetail, JoinGroup, LeaveGroup, GroupViewSet
+# groups/urls.py
 
-router = DefaultRouter()
-router.register(r'groups', GroupViewSet, basename='group')
+from django.urls import path
+from .views import GroupListCreate, GroupDetail  # Ensure you import the correct views
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('join/<int:group_id>/', JoinGroup.as_view(), name='join-group'),
-    path('leave/<int:group_id>/', LeaveGroup.as_view(), name='leave-group'),
-    path('<int:group_id>/', GroupDetail.as_view(), name='group-detail'),
+    path('', GroupListCreate.as_view(), name='group-list-create'),  # URL for the list and create view
+    path('<int:pk>/', GroupDetail.as_view(), name='group-detail'),  # URL for the detail view
 ]

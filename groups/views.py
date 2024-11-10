@@ -6,8 +6,6 @@ from .models import Group, Category
 from .serializers import GroupSerializer
 from rest_framework.decorators import permission_classes
 
-
-# Class-Based View to List all groups or create a new group
 class GroupListCreate(generics.ListCreateAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
@@ -21,12 +19,9 @@ class GroupListCreate(generics.ListCreateAPIView):
         group = serializer.instance
         group.members.add(self.request.user)  # Add creator as the first member
 
-
-# Class-Based View to Get, Update, or Delete a specific group
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [IsAuthenticated]
 
 
 # Class-Based View to Join an Existing Group

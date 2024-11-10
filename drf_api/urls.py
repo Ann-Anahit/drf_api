@@ -26,11 +26,3 @@ urlpatterns = [
     path('followers/', include('followers.urls')),  # Followers app
     path('groups/', include('groups.urls')),  # Groups app
 ]
-
-
-
-
-
-
-
-    
