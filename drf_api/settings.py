@@ -104,8 +104,6 @@ INSTALLED_APPS = [
     'likes',
     'followers',
     'messaging',
-    'channels',
-    
 ]
 
 SITE_ID = 1
@@ -177,7 +175,7 @@ TEMPLATES = [
 ]
 
 # WSGI_APPLICATION = 'drf_api.wsgi.application'
-ASGI_APPLICATION = 'drf_api.wsgi.application'
+ASGI_APPLICATION = 'drf_api.asgi.application'
 
 
 # Database
