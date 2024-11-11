@@ -2,9 +2,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
 from rest_framework.response import Response
-from rest_framework.views import APIView  # Import for APIView
+from rest_framework.views import APIView 
 from .serializers import GroupSerializer
-from .models import Group, Category  # Import Category
+from .models import Group, Category 
 
 class GroupView(APIView):
     permission_classes = [IsAuthenticated]
@@ -12,7 +12,7 @@ class GroupView(APIView):
     def post(self, request):
         serializer = GroupSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(creator=request.user)  # Creator is the authenticated user
+            serializer.save(creator=request.user)  
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
@@ -44,11 +44,10 @@ class JoinGroup(APIView):
     def post(self, request, group_id):
         group = get_object_or_404(Group, id=group_id)
 
-        # Check if user is already a member
+
         if request.user in group.members.all():
             return Response({"detail": "You are already a member of this group."}, status=400)
 
-        # Add user to group members
         group.members.add(request.user)
         serializer = GroupSerializer(group)
         return Response(serializer.data)
