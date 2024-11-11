@@ -82,17 +82,17 @@ On the Posts/events page, you can see a list of events and posts with the fields
 
 ## Followers
 
-The followers template contains five fields: id, owner, created_at, followed and followed_name field.
+The followers template contains five fields: id, owner, created_at, followed and followed_name fields.
 
 ![followers](documentation/images/follower.png)
 
 [Back to top](<#content>)
 
-## Messages
+## Groups
 
-In messages we have the id, sender, receiver, created_at, updated_at, contentx fields.
+In Groups we have the 'id', 'name', 'description', 'creator', 'members', 'category fields.
 
-![messages](documentation/images/messages.png)
+![groups](documentation/images/messages.png)
 
 [Back to top](<#content>)
 

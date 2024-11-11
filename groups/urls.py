@@ -1,9 +1,9 @@
-# groups/urls.py
-
 from django.urls import path
-from .views import GroupListCreate, GroupDetail  # Ensure you import the correct views
+from . import views
 
 urlpatterns = [
-    path('', GroupListCreate.as_view(), name='group-list-create'),  # URL for the list and create view
-    path('<int:pk>/', GroupDetail.as_view(), name='group-detail'),  # URL for the detail view
+    path('', views.GroupListCreate.as_view(), name='group-list-create'),
+    path('<int:pk>/', views.GroupDetail.as_view(), name='group-detail'),
+    path('<int:group_id>/join/', views.JoinGroup.as_view(), name='join-group'),
+    path('<int:group_id>/leave/', views.LeaveGroup.as_view(), name='leave-group'),
 ]
