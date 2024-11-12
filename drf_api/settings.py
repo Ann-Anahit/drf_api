@@ -90,7 +90,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
-    'rest_framework_simplejwt.token_blacklist',
+    # 'rest_framework_simplejwt.token_blacklist',
     'dj_rest_auth',
     'allauth',
     'allauth.account',
@@ -109,8 +109,8 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,10 +120,10 @@ MIDDLEWARE = [
 ]
 
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        os.environ.get('CLIENT_ORIGIN_DEV', ''),
-    ]
+# if 'CLIENT_ORIGIN_DEV' in os.environ:
+#     CORS_ALLOWED_ORIGIN_REGEXES = [
+#         os.environ.get('CLIENT_ORIGIN_DEV', ''),
+#     ]
 if 'CLIENT_ORIGIN' in os.environ:
    CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN'),
@@ -131,6 +131,9 @@ if 'CLIENT_ORIGIN' in os.environ:
     'https://8000-annanahit-drfapi-8hp2g0b8pys.ws.codeinstitute-ide.net',
     'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
 ]
+
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
 # if 'CLIENT_ORIGIN_DEV' in os.environ:
 #     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",
@@ -188,6 +191,7 @@ WSGI_APPLICATION = 'drf_api.wsgi.application'
 
 
 if 'DEV' in os.environ:
+    print('in sql')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -195,6 +199,7 @@ if 'DEV' in os.environ:
         }
     }
 else:
+    print('in postgres') 
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
@@ -242,3 +247,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print('DEBUG: ', DEBUG)
