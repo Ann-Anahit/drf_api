@@ -30,10 +30,10 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': [(
         'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ
-        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
+        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication')
     ],
 
     'DEFAULT_PAGINATION_CLASS':
@@ -47,7 +47,7 @@ if 'DEV' not in os.environ:
     ]
 
 REST_USE_JWT = True
-JWT_AUTH_SECURE = False
+JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
@@ -119,6 +119,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        os.environ.get('CLIENT_ORIGIN_DEV', ''),
+    ]
 if 'CLIENT_ORIGIN' in os.environ:
    CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN'),
@@ -127,12 +132,12 @@ if 'CLIENT_ORIGIN' in os.environ:
     'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
 ]
 
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",
-                                    r"^https://.*\.herokuapp\.com$",
-                                    "https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net",
-                                    "http://localhost:3000", 
-    ]
+# if 'CLIENT_ORIGIN_DEV' in os.environ:
+#     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",
+#                                     r"^https://.*\.herokuapp\.com$",
+#                                     "https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net",
+#                                     "http://localhost:3000", 
+#     ]
 
 CORS_ALLOW_CREDENTIALS = True
 
