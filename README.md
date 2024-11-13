@@ -54,7 +54,7 @@ The relationships between these models are illustrated in the entity-relationshi
 
 # Features
 
-The backend of the project consists of a page for profiles, events, followers, attendances, comments and favorites.
+The backend of the project consists of a page for profiles, events, followers, comments and favorites.
 
 ## Home Page
 
@@ -66,7 +66,7 @@ When entering the API for the first time, the user is greeted by a simple welcom
 
 ## Profiles
 
-On the profiles page you can see a list of profiles and each profile contains the owner, created_at, updated_at, name, bio and image fields. The is_owner, following_id, events_count, followers_count, following_count and messages fields have also been added to the serializer.
+On the profiles page you can see a list of profiles and each profile contains the owner, created_at, updated_at, name, bio and image fields. The is_owner, following_id, events_count, followers_count, following_count have been added to the serializer.
 
 ![profiles](documentation/images/profiles.png)
 
@@ -85,14 +85,6 @@ On the Posts/events page, you can see a list of events and posts with the fields
 The followers template contains five fields: id, owner, created_at, followed and followed_name fields.
 
 ![followers](documentation/images/follower.png)
-
-[Back to top](<#content>)
-
-## Groups
-
-In Groups we have the 'id', 'name', 'description', 'creator', 'members', 'category fields.
-
-![groups](documentation/images/messages.png)
 
 [Back to top](<#content>)
 
