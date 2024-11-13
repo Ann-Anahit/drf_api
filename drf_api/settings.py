@@ -71,9 +71,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '.codeinstitute-ide.net',
-    '3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
+    '3000-annanahit-p5advancedfro-3c4f00u7fat.ws.codeinstitute-ide.net',
     'drf-api-pp-0ae57f00f3cd.herokuapp.com'
-
 ]
 
 # Application definition
@@ -90,7 +89,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
-    # 'rest_framework_simplejwt.token_blacklist',
     'dj_rest_auth',
     'allauth',
     'allauth.account',
@@ -129,18 +127,13 @@ if 'CLIENT_ORIGIN' in os.environ:
     os.environ.get('CLIENT_ORIGIN'),
     'https://meetandmingle-01eaa763465e.herokuapp.com',
     'https://8000-annanahit-drfapi-8hp2g0b8pys.ws.codeinstitute-ide.net',
-    'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
+    'https://3000-annanahit-p5advancedfro-3c4f00u7fat.ws.codeinstitute-ide.net',
+    'http://localhost:3000',
 ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
-
-# if 'CLIENT_ORIGIN_DEV' in os.environ:
-#     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",
-#                                     r"^https://.*\.herokuapp\.com$",
-#                                     "https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net",
-#                                     "http://localhost:3000", 
-#     ]
+                                        
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -159,7 +152,7 @@ CORS_ALLOWED_METHODS = [
 ] 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-annanahit-drfapi-8hp2g0b8pys.ws.codeinstitute-ide.net',
-    'https://3000-annanahit-p5advancedfro-fl0rpyae2is.ws.codeinstitute-ide.net',
+    'https://3000-annanahit-p5advancedfro-3c4f00u7fat.ws.codeinstitute-ide.net',
     'https://meetandmingle-01eaa763465e.herokuapp.com',
 ]
 
