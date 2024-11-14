@@ -2584,7 +2584,7 @@
     "model": "posts.post",
     "pk": 21,
     "fields": {
-        "owner": 18,
+        "owner": 2,
         "created_at": "2024-11-13T12:07:33.892Z",
         "updated_at": "2024-11-13T12:07:33.892Z",
         "title": "My New Post",
@@ -2608,7 +2608,7 @@
     "model": "posts.post",
     "pk": 23,
     "fields": {
-        "owner": 17,
+        "owner": 2,
         "created_at": "2024-11-13T12:08:40.512Z",
         "updated_at": "2024-11-13T12:08:40.512Z",
         "title": "My New Post",
@@ -2672,7 +2672,7 @@
     "model": "comments.comment",
     "pk": 18,
     "fields": {
-        "owner": 19,
+        "owner": 2,
         "post": 19,
         "created_at": "2024-11-13T12:27:32.279Z",
         "updated_at": "2024-11-13T12:27:32.279Z",
@@ -2762,7 +2762,7 @@
     "model": "likes.like",
     "pk": 18,
     "fields": {
-        "owner": 19,
+        "owner": 2,
         "post": 19,
         "created_at": "2024-11-13T12:26:20.019Z"
     }
@@ -2893,93 +2893,5 @@
         "owner": 2,
         "followed": 4,
         "created_at": "2024-10-29T12:01:49.408Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 33,
-    "fields": {
-        "owner": 19,
-        "followed": 16,
-        "created_at": "2024-11-13T12:17:57.856Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 35,
-    "fields": {
-        "owner": 19,
-        "followed": 8,
-        "created_at": "2024-11-13T12:19:10.139Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 37,
-    "fields": {
-        "owner": 19,
-        "followed": 5,
-        "created_at": "2024-11-13T12:25:14.348Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 39,
-    "fields": {
-        "owner": 19,
-        "followed": 18,
-        "created_at": "2024-11-13T12:28:04.791Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 42,
-    "fields": {
-        "owner": 5,
-        "followed": 18,
-        "created_at": "2024-11-13T12:41:16.935Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 44,
-    "fields": {
-        "owner": 5,
-        "followed": 16,
-        "created_at": "2024-11-13T12:54:15.282Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 47,
-    "fields": {
-        "owner": 5,
-        "followed": 8,
-        "created_at": "2024-11-13T12:59:48.306Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 48,
-    "fields": {
-        "owner": 5,
-        "followed": 20,
-        "created_at": "2024-11-13T13:00:25.019Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 57,
-    "fields": {
-        "owner": 21,
-        "followed": 8,
-        "created_at": "2024-11-13T13:36:25.911Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 58,
-    "fields": {
-        "owner": 21,
-        "followed": 16,
-        "created_at": "2024-11-13T13:38:50.699Z"
-    }
-}, {
-    "model": "followers.follower",
-    "pk": 65,
-    "fields": {
-        "owner": 4,
-        "followed": 20,
-        "created_at": "2024-11-13T13:45:18.049Z"
     }
 }]
