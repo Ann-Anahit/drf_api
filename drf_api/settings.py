@@ -122,15 +122,10 @@ MIDDLEWARE = [
 #         os.environ.get('CLIENT_ORIGIN_DEV', ''),
 #     ]
 if 'CLIENT_ORIGIN' in os.environ:
-   CORS_ALLOWED_ORIGINS = [
-    os.environ.get('CLIENT_ORIGIN'),
-    'https://meetandmingle-01eaa763465e.herokuapp.com',
-    'https://8000-annanahit-drfapi-8hp2g0b8pys.ws.codeinstitute-ide.net',
-    'https://3000-annanahit-p5advancedfro-3c4f00u7fat.ws.codeinstitute-ide.net',
-    'http://localhost:3000',
+    CORS_ALLOWED_ORIGINS = [
+os.environ.get('CLIENT_ORIGIN'),
 ]
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
+else:
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
                                         
 
