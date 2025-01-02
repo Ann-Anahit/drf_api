@@ -71,7 +71,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '.codeinstitute-ide.net',
-    '3000-annanahit-p5advancedfro-3c4f00u7fat.ws.codeinstitute-ide.net',
+    '3000-annanahit-p5advancedfro-bzwjmglepih.ws.codeinstitute-ide.net',
     'drf-api-pp-0ae57f00f3cd.herokuapp.com'
 ]
 
@@ -146,8 +146,8 @@ CORS_ALLOWED_METHODS = [
     'DELETE',
 ] 
 CSRF_TRUSTED_ORIGINS = [
-    'https://3000-annanahit-p5advancedfro-3c4f00u7fat.ws.codeinstitute-ide.net',
-    'https://meetandmingle-01eaa763465e.herokuapp.com',
+    'https://3000-annanahit-p5advancedfro-bzwjmglepih.ws.codeinstitute-ide.net',
+    'https://meetandmingle-01eaa763465e.herokuapp.com', 
     'https://8000-annanahit-drfapi-fa28dgkrr6c.ws.codeinstitute-ide.net', 
 ]
 
