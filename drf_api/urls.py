@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import root_route, logout_route
+from rest_framework.routers import DefaultRouter
+from category.views import PostCategoryViewSet 
+
+router = DefaultRouter()
+router.register(r'postcategories', PostCategoryViewSet)
 
 urlpatterns = [
     path('', root_route),
@@ -31,4 +36,5 @@ urlpatterns = [
     path('', include('comments.urls')),
     path('', include('likes.urls')),
     path('', include('followers.urls')),
+    path('', include(router.urls)),
 ]
