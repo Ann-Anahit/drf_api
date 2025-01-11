@@ -4,4 +4,4 @@ from .models import PostCategory
 class PostCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = PostCategory
-        fields = '__all__'
+        fields = ['id', 'name', 'image'] 
