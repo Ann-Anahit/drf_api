@@ -48,7 +48,7 @@ You can find the User Stories here: [GitHub Project](https://github.com/users/An
 The relationships between these models are illustrated in the entity-relationship diagram below.
 
 
-![erd](documentation/images/ERD.png)
+![erd](documentation/images/ERD.jpg)
 
 [Back to top](<#content>)
 
