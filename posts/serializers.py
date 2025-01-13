@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from posts.models import Post
 from likes.models import Like
-from category.serializers import PostCategorySerializer
+from category.models import PostCategory
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -12,7 +12,11 @@ class PostSerializer(serializers.ModelSerializer):
     like_id = serializers.SerializerMethodField()
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
-    category = PostCategorySerializer()
+    category = serializers.PrimaryKeyRelatedField(
+        queryset=PostCategory.objects.all()
+    )
+    category_name = serializers.ReadOnlyField(source='category.name')
+    category_image = serializers.ReadOnlyField(source='category.image.url') 
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -47,5 +51,5 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_image', 'created_at', 'updated_at',
             'title', 'content', 'image', 'image_filter',
             'like_id', 'likes_count', 'comments_count',
-            'category',
+            'category', 
         ]
