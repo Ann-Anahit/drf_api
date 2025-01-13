@@ -15,8 +15,6 @@ class PostSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(
         queryset=PostCategory.objects.all()
     )
-    category_name = serializers.ReadOnlyField(source='category.name')
-    category_image = serializers.ReadOnlyField(source='category.image.url') 
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
