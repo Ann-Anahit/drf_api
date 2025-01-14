@@ -8,10 +8,13 @@ class Event(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=126)
     description = models.TextField(blank=True)
+    location = models.CharField(max_length=255)
+    start_time = models.DateTimeField()
     event_image = models.ImageField(
-        upload_to='images/', default='../default_post_h52xzo', blank=True
+        upload_to='images/', default='../default_xgered.webp', blank=True
+
     )
     event_date = models.DateTimeField()
 
