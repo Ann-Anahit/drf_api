@@ -3,6 +3,7 @@ from posts.models import Post
 from likes.models import Like
 from category.models import PostCategory
 
+
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -11,24 +12,9 @@ class PostSerializer(serializers.ModelSerializer):
     like_id = serializers.SerializerMethodField()
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
-    category = serializers.SerializerMethodField()
-
-    class PostSerializer(serializers.ModelSerializer):
-        category = serializers.SerializerMethodField()
-
-    def get_category(self, obj):
-        print(f"Category for Post {obj.id}: {obj.category}") 
-        if obj.category:
-            print(f"Category name: {obj.category.name}, image: {obj.category.image.url if obj.category.image else None}")
-        return {
-            "id": obj.category.id if obj.category else None,
-            "name": obj.category.name if obj.category else None,
-            "image": obj.category.image.url if obj.category and obj.category.image else None,
-        } if obj.category else None
-
-    class Meta:
-        model = Post
-        fields = ['id', 'title', 'category']
+    category = serializers.PrimaryKeyRelatedField(
+        queryset=PostCategory.objects.all()
+    )
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
