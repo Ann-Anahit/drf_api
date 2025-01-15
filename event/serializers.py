@@ -7,7 +7,6 @@ class EventSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-    event_date = serializers.DateTimeField(format='%d %b %Y %H:%M')
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -22,10 +21,19 @@ class EventSerializer(serializers.ModelSerializer):
             )
         return value
 
-    def validate_event_date(self, value):
+    def validate_event_start(self, value):
         if value < timezone.now():
             raise serializers.ValidationError(
-                'The event date cannot be in the past.'
+                'The event start cannot be in the past.'
+            )
+        return value
+
+    def validate_duration(self, value):
+        # Example: Only allow durations like "3 hours", "2 days", "1 week"
+        pattern = r'^\d+\s+(hours?|days?|weeks?)$'
+        if not re.match(pattern, value.lower()):
+            raise serializers.ValidationError(
+                'Duration must be in the format "<number> <unit>", e.g., "3 hours" or "2 days".'
             )
         return value
 
@@ -36,7 +44,8 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = [
-            'id', 'owner', 'is_owner', 'profile_id',
+           'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
-            'title', 'description', 'event_date', 'event_image',
+            'title', 'description', 'location',
+            'event_start', 'duration', 'event_image',
         ]

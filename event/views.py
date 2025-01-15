@@ -19,12 +19,12 @@ class EventList(generics.ListCreateAPIView):
         'owner__followed__owner__profile',
         'favorites__owner__profile',
         'owner__profile',
-        'event_date',
+        'event_start',
     ]
     search_fields = [
         'owner__username',
         'title',
-        'event_date',
+        'event_start',
     ]
     ordering_fields = []
 

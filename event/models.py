@@ -11,12 +11,12 @@ class Event(models.Model):
     title = models.CharField(max_length=126)
     description = models.TextField(blank=True)
     location = models.CharField(max_length=255)
-    start_time = models.DateTimeField()
+    event_start = models.DateTimeField()
+    duration = models.CharField(max_length=100)
     event_image = models.ImageField(
         upload_to='images/', default='../default_xgered.webp', blank=True
-
     )
-    event_date = models.DateTimeField()
+  
 
     class Meta:
         ordering = ['-created_at']
@@ -26,8 +26,3 @@ class Event(models.Model):
 
     def clean(self):
         super().clean()
-
-        if self.event_date < timezone.now():
-            raise ValidationError({
-                'event_date': 'The event date cannot be in the past'
-            })
