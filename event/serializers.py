@@ -29,13 +29,13 @@ class EventSerializer(serializers.ModelSerializer):
         return value
 
     def validate_duration(self, value):
-        pattern = r'^\d+\s+(hours?|days?|weeks?)$'
+        pattern = r'^\d+\s+[a-z]+$'
         if not re.match(pattern, value.lower()):
             raise serializers.ValidationError(
-                'Duration must be in the format "<number> <unit>", e.g., "3 hours" or "2 days".'
+                'Duration must be in the format "<number> <unit>".'
             )
         return value
-    
+
     def validate_location(self, value):
         if not value:
             raise serializers.ValidationError('Location cannot be empty.')
