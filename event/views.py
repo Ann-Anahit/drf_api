@@ -17,7 +17,6 @@ class EventList(generics.ListCreateAPIView):
     ]
     filterset_fields = [
         'owner__followed__owner__profile',
-        'favorites__owner__profile',
         'owner__profile',
         'event_start',
     ]
