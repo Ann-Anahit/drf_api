@@ -29,10 +29,10 @@ class EventSerializer(serializers.ModelSerializer):
         return value
 
     def validate_duration(self, value):
-        pattern = r'^\d+\s+[a-z]+$'
-        if not re.match(pattern, value.lower()):
+        units = ['hour', 'hours', 'day', 'days', 'week', 'weeks']
+        if not any(unit in value.lower() for unit in units):
             raise serializers.ValidationError(
-                'Duration must be in the format "<number> <unit>".'
+                'Duration must be in the format "<number> <unit>", e.g., "3 hours" or "2 days".'
             )
         return value
 
