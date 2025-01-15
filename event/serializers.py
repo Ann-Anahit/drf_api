@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.utils import timezone
-from events.models import Event
+from event.models import Event
 
 class EventSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -29,13 +29,18 @@ class EventSerializer(serializers.ModelSerializer):
         return value
 
     def validate_duration(self, value):
-        # Example: Only allow durations like "3 hours", "2 days", "1 week"
         pattern = r'^\d+\s+(hours?|days?|weeks?)$'
         if not re.match(pattern, value.lower()):
             raise serializers.ValidationError(
                 'Duration must be in the format "<number> <unit>", e.g., "3 hours" or "2 days".'
             )
         return value
+    
+    def validate_location(self, value):
+        if not value:
+            raise serializers.ValidationError('Location cannot be empty.')
+        return value
+
 
     def get_is_owner(self, obj):
         request = self.context['request']
