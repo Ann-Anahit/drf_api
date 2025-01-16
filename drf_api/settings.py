@@ -72,8 +72,8 @@ ALLOWED_HOSTS = [
     '.codeinstitute-ide.net',
     '8000-annanahit-drfapi-fa28dgkrr6c.ws.codeinstitute-ide.net'
     '3000-annanahit-p5advancedfro-bzwjmglepih.ws.codeinstitute-ide.net',
-    'drf-api-pp-0ae57f00f3cd.herokuapp.com',
-    'meetandmingle-01eaa763465e.herokuapp.com'
+    'https://drf-api-pp-0ae57f00f3cd.herokuapp.com',
+    'meetandmingle-01eaa763465e.herokuapp.com',
 ]
 # Application definition
 INSTALLED_APPS = [
