@@ -29,8 +29,8 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
-    hashtags =  models.CharField(max_length=120)
-    inspiration = models.CharField(max_length=250)
+    hashtags =  models.CharField(max_length=120, blank=True)
+    inspiration = models.CharField(max_length=250, blank=True)
     image = models.ImageField(
         upload_to='images/', default='../default_xgered.webp', blank=True
     )
