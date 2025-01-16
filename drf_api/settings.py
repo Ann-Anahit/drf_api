@@ -64,7 +64,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ 
+DEBUG = True #'DEV' in os.environ 
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST', ''),
@@ -148,7 +148,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://3000-annanahit-p5advancedfro-bzwjmglepih.ws.codeinstitute-ide.net',
     'https://meetandmingle-01eaa763465e.herokuapp.com', 
     'https://8000-annanahit-drfapi-fa28dgkrr6c.ws.codeinstitute-ide.net', 
-
+    'https://drf-api-pp-0ae57f00f3cd.herokuapp.com'
 ]
 
 
