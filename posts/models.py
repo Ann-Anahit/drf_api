@@ -29,6 +29,8 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
+    hashtags =  models.CharField(max_length=120)
+    inspiration = models.CharField(max_length=250)
     image = models.ImageField(
         upload_to='images/', default='../default_xgered.webp', blank=True
     )
@@ -38,6 +40,7 @@ class Post(models.Model):
     category = models.ForeignKey(
         PostCategory, on_delete=models.CASCADE, null=True
     )
+  
     class Meta:
         ordering = ['-created_at']
 
