@@ -66,14 +66,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # 'DEV' in os.environ 
 
-ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOST', ''),
-    '127.0.0.1',
-    'localhost',
-    '.codeinstitute-ide.net',
-    '3000-annanahit-p5advancedfro-bzwjmglepih.ws.codeinstitute-ide.net',
-    'drf-api-pp-0ae57f00f3cd.herokuapp.com'
-]
+ALLOWED_HOSTS = ['8000-annanahit-drfapi-fa28dgkrr6c.ws.codeinstitute-ide.net', os.environ.get('ALLOWED_HOST')]
 
 # Application definition
 INSTALLED_APPS = [
@@ -122,13 +115,13 @@ MIDDLEWARE = [
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
        os.environ.get('CLIENT_ORIGIN'),
-       os.environ.get('CLIENT_ORIGIN_DEV')
    ]
 if 'CLIENT_ORIGIN_DEV' in os.environ:    
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
                                         
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ALLOW_HEADERS = [
     'authorization',
