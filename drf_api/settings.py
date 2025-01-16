@@ -118,15 +118,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [ 'https://meetandmingle-01eaa763465e.herokuapp.com', ]
 
-if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-       os.environ.get('CLIENT_ORIGIN'),
-   ]
+#if 'CLIENT_ORIGIN' in os.environ:
+#   CORS_ALLOWED_ORIGINS = [
+#     os.environ.get('CLIENT_ORIGIN'),
+#   ]
 if 'CLIENT_ORIGIN_DEV' in os.environ:    
     CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
                                         
+CORS_ALLOWED_ORIGINS = [ 'https://meetandmingle-01eaa763465e.herokuapp.com', ]
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL=True
