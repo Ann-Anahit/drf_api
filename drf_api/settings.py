@@ -66,8 +66,14 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # 'DEV' in os.environ 
 
-ALLOWED_HOSTS = ['8000-annanahit-drfapi-fa28dgkrr6c.ws.codeinstitute-ide.net', os.environ.get('ALLOWED_HOST')]
-
+ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST', ''),
+    '127.0.0.1',
+    '.codeinstitute-ide.net',
+    '8000-annanahit-drfapi-fa28dgkrr6c.ws.codeinstitute-ide.net'
+    '3000-annanahit-p5advancedfro-bzwjmglepih.ws.codeinstitute-ide.net',
+    'drf-api-pp-0ae57f00f3cd.herokuapp.com'
+]
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
