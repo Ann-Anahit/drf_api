@@ -11,7 +11,7 @@ class Event(models.Model):
     description = models.TextField(blank=True)
     location = models.CharField(max_length=255)
     event_start = models.DateTimeField()
-    duration = models.CharField(max_length=100, default='0 hours')
+    duration = models.CharField(max_length=100, default=0)
     event_image = models.ImageField(
         upload_to='images/', default='../default_xgered.webp', blank=True
     )
