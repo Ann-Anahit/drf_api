@@ -48,7 +48,7 @@ You can find the User Stories here: [GitHub Project](https://github.com/users/An
 The relationships between these models are illustrated in the entity-relationship diagram below.
 
 
-![erd](documentation/images/ERD.jpg)
+![erd](documentation/images/Database_ERD.jpeg)
 
 [Back to top](<#content>)
 
@@ -74,9 +74,21 @@ On the profiles page you can see a list of profiles and each profile contains th
 
 ## Posts
 
-On the Posts/events page, you can see a list of events and posts with the fields owner, created_at, updated_at, title, description, image, content and updated_at. The serializer added the fields is_owner, profile_id, profile_image, favorite_id and comments_count.
+On the Posts page, you can see a list of posts with the fields owner, created_at, updated_at, title, description, image, content and updated_at. The serializer added the fields is_owner, profile_id, profile_image, favorite_id, comments_count, category, hashtags and inspiration.
 
-![events](documentation/images/posts.png)
+![posts](documentation/images/posts.png)
+
+## Categories
+
+On the Category page, you can see a list of the 5 categories. The admin can edit and delite the categories. 
+
+![postcategories](documentation/images/postcategories.png)
+
+## Events
+
+On the event page, you can see a list of events with the fields owner, created_at, updated_at, title, description, image, description, duration event_start, location. The serializer added the fields is_owner, profile_id, profile_image, favorite_id, comments_count, 
+
+![event](documentation/images/event.png)
 
 [Back to top](<#content>)
 
@@ -84,7 +96,7 @@ On the Posts/events page, you can see a list of events and posts with the fields
 
 The followers template contains five fields: id, owner, created_at, followed and followed_name fields.
 
-![followers](documentation/images/follower.png)
+![followers](documentation/images/followers.png)
 
 [Back to top](<#content>)
 
@@ -125,6 +137,9 @@ Please click [here](TESTING.md) to go to the testing document.
 * [Github](https://github.com/)
 * [Heroku](https://www.heroku.com/)
 * [Cloudinary](https://cloudinary.com/)
+* [Lucidchart](https://lucidchard.com/)
+
+
 
 [Back to top](<#content>)
 
@@ -191,7 +206,7 @@ The application has been deployed from GitHub to Heroku by following the steps:
 
 # Credits
 
-* The default profile and default event images were provided by Code Institute in the Django Rest Framework walkthrough project and I reused them.
+* 
 * The biggest part of my backend is based on CI's DRF API.
 
 [Back to top](<#content>)
