@@ -1,4 +1,4 @@
-# MeetandMingle. API
+# Meet&Mingle. API
 
 This is the testing document for the backend of my MeetandMingle project. If you want to see the README, click [here](README.md).
 
@@ -80,7 +80,17 @@ The code has been validated by the [Code Institute's PEP8 validator](https://pep
 | urls.py         | ✅     |
 | views.py        | ✅     |
 
-### Messaging app
+### Category app
+
+| File            | Status |
+|-----------------|--------|
+| models.py       | ✅     |
+| serializers.py  | ✅     |
+| urls.py         | ✅     |
+| views.py        | ✅     |
+
+
+### Event app
 
 | File            | Status |
 |-----------------|--------|
@@ -100,9 +110,8 @@ Some manual tests have been carried out.
 Can retrieve followers using valid ID | ✅
 Can list posts | ✅
 Can delete follow from my own profile | ✅
-Logged out user can't create event/post | ✅
-Can't write a message | ✅
-Can update own post/event | ✅
+Logged out user can't create post | ✅
+Can update own post | ✅
 Can update own profile | ✅
 Can't update someone else's profile | ✅
 Can list comments | ✅
@@ -117,11 +126,11 @@ Can't delete someone else's favorites | ✅
 Can't favorite the same event twice | ✅
 Can't retrieve profile using invalid ID | ✅
 Can't update someone else's comment | ✅
+Can't delete someone else's comments | ✅
 Can retrieve event using valid ID | ✅
 Can't delete someone else's post | ✅
 Can update own comment | ✅
 Can't retrieve followers using invalid ID | ✅
-Can't delete someone else's message | ✅
 Can delete own comment | ✅
 Logged in user can create post | ✅
 Can retrieve profile using valid ID | ✅
@@ -132,8 +141,12 @@ Logged out user can't follow | ✅
 Can list profiles | ✅
 Logged in user can follow | ✅
 Logged in user can create comment | ✅
-Can't delete someone else's comment | ✅
 Can't update someone else's post | ✅
-Can list posts | ✅
+Can list events | ✅
+Can update own events | ✅
+Can delete own events | ✅
+Can't update/delete someone else's events | ✅
+Can choose categories for the posts | ✅
+
 
 [Back to top](<#content>)
