@@ -16,11 +16,14 @@ Visit the frontend repository here → [Frontend](https://github.com/Ann-Anahit/
 - [Features](#features)
   * [Home Page](#home-page)
   * [Profiles](#profiles)
-  * [Events](#events)
+  * [Posts](#posts)
+  * [Category](#postcategory)
   * [Followers](#followers)
-  * [Attendances](#attendances)
   * [Comments](#comments)
-  * [Favorites](#favorites)
+  * [Likes](#likes)
+  * [Event](#event)
+  * [Followers](#followers)
+
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Fork](#fork)
@@ -206,7 +209,7 @@ The application has been deployed from GitHub to Heroku by following the steps:
 
 # Credits
 
-* 
+
 * The biggest part of my backend is based on CI's DRF API.
 
 [Back to top](<#content>)
