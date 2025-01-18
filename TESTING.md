@@ -53,7 +53,7 @@ The code has been validated by the [Code Institute's PEP8 validator](https://pep
 | urls.py         | ✅     |
 | views.py        | ✅     |
 
-### Favorites app
+### Followers app
 
 | File            | Status |
 |-----------------|--------|
@@ -62,7 +62,7 @@ The code has been validated by the [Code Institute's PEP8 validator](https://pep
 | urls.py         | ✅     |
 | views.py        | ✅     |
 
-### Followers app
+### Likes app
 
 | File            | Status |
 |-----------------|--------|
@@ -107,46 +107,60 @@ Some manual tests have been carried out.
 
 | Test            | Status |
 |-----------------|--------|
-Can retrieve followers using valid ID | ✅
-Can list posts | ✅
-Can delete follow from my own profile | ✅
-Logged out user can't create post | ✅
-Can update own post | ✅
+
+Can list Profiles | ✅
+Can retrieve profile using valid ID | ✅
 Can update own profile | ✅
 Can't update someone else's profile | ✅
-Can list comments | ✅
-Logged in user can favorite | ✅
-Can retrieve favorites using valid ID | ✅
+Can't delete someone else's profile | ✅
+
+Can list followers | ✅
+Logged in user can follow | ✅
+Logged out user can't follow | ✅
+Can retrieve followers using valid ID | ✅
+Can delete follow from my own profile | ✅
+Can't retrieve followers using invalid ID | ✅
+
+Can list likes | ✅
+Logged in user can like | ✅
+Can delete own likes | ✅
+Can retrieve likes using valid ID | ✅
+Logged out user can't like | ✅
+Can't delete someone else's likes | ✅
+Can't like the same post twice | ✅
+
+Can list posts | ✅
+Can update own post | ✅
+Logged out user can't create post | ✅
+Logged in user can create post | ✅
+Can't delete someone else's post | ✅
+Can't update someone else's post | ✅
 Can't retrieve post using invalid ID | ✅
-Can delete own favorites | ✅
+Can't retrieve profile using invalid ID | ✅
+
+Can list comments | ✅
+Logged in user can create comment | ✅
 Can't retrieve comment using invalid ID | ✅
 Can retrieve comment using valid ID | ✅
-Can list followers | ✅
-Can't delete someone else's favorites | ✅
-Can't favorite the same event twice | ✅
-Can't retrieve profile using invalid ID | ✅
 Can't update someone else's comment | ✅
 Can't delete someone else's comments | ✅
-Can retrieve event using valid ID | ✅
-Can't delete someone else's post | ✅
 Can update own comment | ✅
-Can't retrieve followers using invalid ID | ✅
 Can delete own comment | ✅
-Logged in user can create post | ✅
-Can retrieve profile using valid ID | ✅
-Can list favorites | ✅
-Logged out user can't favorite | ✅
-Can't delete someone else's profile | ✅
-Logged out user can't follow | ✅
-Can list profiles | ✅
-Logged in user can follow | ✅
-Logged in user can create comment | ✅
-Can't update someone else's post | ✅
+
+Can list categories | ✅
+Can choose categories for the own posts | ✅
+Can add or delete new categories | ✅
+Can add images to categories | ✅
+
+
+Can retrieve event using valid ID | ✅
 Can list events | ✅
+Logged in user can create event | ✅
+Logged out user can't create event | ✅
 Can update own events | ✅
 Can delete own events | ✅
 Can't update/delete someone else's events | ✅
-Can choose categories for the posts | ✅
+
 
 
 [Back to top](<#content>)
