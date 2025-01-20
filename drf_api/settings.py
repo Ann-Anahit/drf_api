@@ -131,13 +131,6 @@ CORS_ALLOWED_ORIGINS = [ 'https://meetandmingle-01eaa763465e.herokuapp.com', ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-#CORS_ALLOW_HEADERS = [
-#    'authorization',
-#    'content-type',
-#    'x-csrftoken',
-#]
-
-
 CORS_ALLOWED_METHODS = [
     'GET',
     'POST',
