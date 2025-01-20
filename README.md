@@ -5,6 +5,9 @@ Welcome! This project provides the backend services and API endpoints for the me
 Visit the deployed API here → [API](https://drf-api-pp-0ae57f00f3cd.herokuapp.com/)<br>
 Visit the frontend repository here → [Frontend](https://github.com/Ann-Anahit/p5-advanced-frontend)
 
+
+![Meet&Mingle](documentation/images/Meet&Mingle.png)
+
 ## Content
 
 - [Project](#project)
