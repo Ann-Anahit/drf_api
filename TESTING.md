@@ -107,20 +107,17 @@ Some manual tests have been carried out.
 
 | Test            | Status |
 |-----------------|--------|
-
 Can list Profiles | ✅
 Can retrieve profile using valid ID | ✅
 Can update own profile | ✅
 Can't update someone else's profile | ✅
 Can't delete someone else's profile | ✅
-
 Can list followers | ✅
 Logged in user can follow | ✅
 Logged out user can't follow | ✅
 Can retrieve followers using valid ID | ✅
 Can delete follow from my own profile | ✅
 Can't retrieve followers using invalid ID | ✅
-
 Can list likes | ✅
 Logged in user can like | ✅
 Can delete own likes | ✅
@@ -128,7 +125,6 @@ Can retrieve likes using valid ID | ✅
 Logged out user can't like | ✅
 Can't delete someone else's likes | ✅
 Can't like the same post twice | ✅
-
 Can list posts | ✅
 Can update own post | ✅
 Logged out user can't create post | ✅
@@ -137,7 +133,6 @@ Can't delete someone else's post | ✅
 Can't update someone else's post | ✅
 Can't retrieve post using invalid ID | ✅
 Can't retrieve profile using invalid ID | ✅
-
 Can list comments | ✅
 Logged in user can create comment | ✅
 Can't retrieve comment using invalid ID | ✅
@@ -146,13 +141,10 @@ Can't update someone else's comment | ✅
 Can't delete someone else's comments | ✅
 Can update own comment | ✅
 Can delete own comment | ✅
-
 Can list categories | ✅
 Can choose categories for the own posts | ✅
 Can add or delete new categories | ✅
 Can add images to categories | ✅
-
-
 Can retrieve event using valid ID | ✅
 Can list events | ✅
 Logged in user can create event | ✅
